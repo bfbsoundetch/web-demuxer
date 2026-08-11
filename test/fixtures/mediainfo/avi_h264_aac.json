@@ -4,6 +4,9 @@
   "bit_rate": "483072",
   "start_time": 0,
   "nb_streams": 2,
+  "tags": {
+    "software": "Lavf61.1.100"
+  },
   "streams": [
     {
       "id": 0,

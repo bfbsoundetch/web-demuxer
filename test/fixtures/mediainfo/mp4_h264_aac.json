@@ -4,6 +4,13 @@
   "bit_rate": "629116",
   "start_time": 0,
   "nb_streams": 4,
+  "tags": {
+    "major_brand": "mp42",
+    "minor_version": "0",
+    "compatible_brands": "mp42isomavc1",
+    "creation_time": "2012-03-13T08:58:06.000000Z",
+    "encoder": "HandBrake 0.9.6 2012022800"
+  },
   "streams": [
     {
       "id": 1,

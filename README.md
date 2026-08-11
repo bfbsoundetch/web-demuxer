@@ -163,6 +163,11 @@ Extracts comprehensive media metadata (similar to ffprobe output).
     "bit_rate": "6515500",
     "start_time": 0,
     "nb_streams": 2,
+    "tags": {
+        "title": "Example title",
+        "artist": "Example artist",
+        "album": "Example album"
+    },
     "streams": [
         {
             "id": 1,

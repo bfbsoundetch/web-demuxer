@@ -100,6 +100,28 @@ for (const {path: testFilePath, name} of getTestFiles(path.join('..', 'samples')
   });
 }
 
+test('should extract ID3 metadata', async ({ page }) => {
+  await page.goto(pageUrl);
+  await page.setInputFiles(
+    inputFileSelector,
+    path.join(__dirname, '..', 'samples', 'metadata', 'id3.mp3')
+  );
+
+  const tags = await page.evaluate(async (inputFileSelector) => {
+    const file = (document.querySelector(inputFileSelector) as HTMLInputElement).files![0];
+    await window.demuxer.load(file);
+    return (await window.demuxer.getMediaInfo()).tags;
+  }, inputFileSelector);
+
+  expect(tags).toMatchObject({
+    title: 'Tagged title',
+    artist: 'Tagged artist',
+    album: 'Tagged album',
+    genre: 'Tagged genre',
+    comment: 'Custom comment',
+  });
+});
+
 for (const {path: testFilePath, name} of getTestFiles(path.join('..', 'samples', 'orientation'))) {
   test(`should get correct rotation and flip for ${name}`, async ({ page }) => {
     await page.goto(pageUrl);

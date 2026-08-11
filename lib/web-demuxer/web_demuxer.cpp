@@ -109,6 +109,7 @@ typedef struct WebMediaInfo
     int nb_streams;
     int nb_chapters;
     int flags;
+    val tags;
     std::vector<WebAVStream> streams;
 } WebMediaInfo;
 
@@ -305,7 +306,7 @@ void gen_web_stream(WebAVStream &web_stream, AVStream *stream, AVFormatContext *
     int64_t nb_frames = stream->nb_frames;
 
     // vp8 codec does not have nb_frames
-    if (nb_frames == 0)
+    if (nb_frames == 0 && stream->avg_frame_rate.num > 0 && stream->avg_frame_rate.den > 0)
     {
         nb_frames = (fmt_ctx->duration * (double)stream->avg_frame_rate.num) / ((double)stream->avg_frame_rate.den * AV_TIME_BASE);
     }
@@ -426,8 +427,15 @@ WebMediaInfo get_media_info(std::string filename) {
         .nb_streams = num_streams,
         .nb_chapters = (int)fmt_ctx->nb_chapters,
         .flags = fmt_ctx->flags,
+        .tags = val::object(),
         .streams = std::vector<WebAVStream>(num_streams),
     };
+
+    AVDictionaryEntry *tag = NULL;
+    while ((tag = av_dict_get(fmt_ctx->metadata, "", tag, AV_DICT_IGNORE_SUFFIX)))
+    {
+        media_info.tags.set(safe_str(tag->key), safe_str(tag->value));
+    }
 
     for (int stream_index = 0; stream_index < num_streams; stream_index++)
     {
@@ -760,6 +768,7 @@ EMSCRIPTEN_BINDINGS(web_demuxer)
         .field("nb_streams", &WebMediaInfo::nb_streams)
         .field("nb_chapters", &WebMediaInfo::nb_chapters)
         .field("flags", &WebMediaInfo::flags)
+        .field("tags", &WebMediaInfo::tags)
         .field("streams", &WebMediaInfo::streams);
 
     class_<WebAVPacket>("WebAVPacket")

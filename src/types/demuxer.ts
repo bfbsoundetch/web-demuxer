@@ -53,5 +53,7 @@ export interface WebMediaInfo {
   nb_streams: number;
   nb_chapters: number;
   flags: number;
+  /** File/container tags normalized by FFmpeg (for example title, artist, and album). */
+  tags: Record<string, string>;
   streams: WebAVStream[];
 }

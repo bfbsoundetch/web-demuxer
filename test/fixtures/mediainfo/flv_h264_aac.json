@@ -4,6 +4,12 @@
   "bit_rate": "315884",
   "start_time": 0.08,
   "nb_streams": 2,
+  "tags": {
+    "major_brand": "mp42",
+    "minor_version": "0",
+    "compatible_brands": "mp42isomavc1",
+    "encoder": "Lavf61.1.100"
+  },
   "streams": [
     {
       "id": 0,
@@ -122,7 +128,7 @@
       "duration": 10.106,
       "rotation": 0,
       "flip": false,
-      "nb_frames": "-9223372036854775808",
+      "nb_frames": "0",
       "tags": {}
     }
   ]

@@ -4,6 +4,12 @@
   "bit_rate": "896944",
   "start_time": 0,
   "nb_streams": 2,
+  "tags": {
+    "COMPATIBLE_BRANDS": "mp42isomavc1",
+    "MAJOR_BRAND": "mp42",
+    "MINOR_VERSION": "0",
+    "ENCODER": "Lavf61.1.100"
+  },
   "streams": [
     {
       "id": 0,
@@ -4030,7 +4036,7 @@
       "duration": 10.027,
       "rotation": 0,
       "flip": false,
-      "nb_frames": "-9223372036854775808",
+      "nb_frames": "0",
       "tags": {
         "VENDOR_ID": "[0][0][0][0]",
         "ENCODER": "Lavc61.3.100 libvorbis",
