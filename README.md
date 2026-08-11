@@ -1,11 +1,11 @@
-<h4 align="right"><strong>English</strong> | <a href="https://github.com/ForeverSc/web-demuxer/blob/main/README_CN.md">简体中文</a></h4>
+<h4 align="right"><strong>English</strong> | <a href="https://github.com/bfbsoundetch/web-demuxer/blob/main/README_CN.md">简体中文</a></h4>
 <h1 align="center">Web-Demuxer</h1>
 <p align="center">Demux media files in the browser using WebAssembly, designed for WebCodecs.</p>
 
 <div align="center">
-  <a href="https://www.npmjs.com/package/web-demuxer"><img src="https://img.shields.io/npm/v/web-demuxer" alt="version"></a>
-  <a href="https://www.npmjs.com/package/web-demuxer"><img src="https://img.shields.io/npm/dm/web-demuxer" alt="downloads"></a>
-  <a href="https://www.jsdelivr.com/package/npm/web-demuxer"><img src="https://data.jsdelivr.com/v1/package/npm/web-demuxer/badge" alt="hits"></a>
+  <a href="https://www.npmjs.com/package/@bfbsoundetch/web-demuxer"><img src="https://img.shields.io/npm/v/@bfbsoundetch/web-demuxer" alt="version"></a>
+  <a href="https://www.npmjs.com/package/@bfbsoundetch/web-demuxer"><img src="https://img.shields.io/npm/dm/@bfbsoundetch/web-demuxer" alt="downloads"></a>
+  <a href="https://www.jsdelivr.com/package/npm/@bfbsoundetch/web-demuxer"><img src="https://data.jsdelivr.com/v1/package/npm/@bfbsoundetch/web-demuxer/badge" alt="hits"></a>
 </div>
 
 ## Overview
@@ -22,11 +22,11 @@ WebCodecs provides decoding capabilities but lacks demuxing functionality. While
 ## Quick Start
 
 ```bash
-npm install web-demuxer
+npm install @bfbsoundetch/web-demuxer
 ```
 
 ```typescript
-import { WebDemuxer } from "web-demuxer";
+import { WebDemuxer } from "@bfbsoundetch/web-demuxer";
 
 const demuxer = new WebDemuxer();
 
@@ -60,13 +60,13 @@ async function seek(file, time) {
 
 ### NPM
 ```bash
-npm install web-demuxer
+npm install @bfbsoundetch/web-demuxer
 ```
 
 ### CDN
 ```html
 <script type="module">
-  import { WebDemuxer } from 'https://cdn.jsdelivr.net/npm/web-demuxer/+esm';
+  import { WebDemuxer } from 'https://cdn.jsdelivr.net/npm/@bfbsoundetch/web-demuxer/+esm';
 </script>
 ```
 
@@ -77,7 +77,7 @@ npm install web-demuxer
 ```typescript
 const demuxer = new WebDemuxer({
   // Option 1: Use CDN
-  wasmFilePath: "https://cdn.jsdelivr.net/npm/web-demuxer@latest/dist/wasm-files/web-demuxer.wasm",
+  wasmFilePath: "https://cdn.jsdelivr.net/npm/@bfbsoundetch/web-demuxer@latest/dist/wasm-files/web-demuxer.wasm",
   
   // Option 2: Use local file
   // Copy dist/wasm-files/web-demuxer.wasm from npm package to public directory

@@ -1,7 +1,7 @@
 {
-  "name": "web-demuxer",
-  "version": "4.0.0",
-  "description": "Demux media files in the browser using WebAssembly, designed for WebCodecs",
+  "name": "@bfbsoundetch/web-demuxer",
+  "version": "4.0.1",
+  "description": "Fork of bilibili/web-demuxer to support more file types and extracting track info.",
   "type": "module",
   "files": [
     "dist"
@@ -74,10 +74,17 @@
     "node": ">=18",
     "pnpm": ">=8"
   },
-  "author": "ForeverSc",
+  "author": "bfbsoundetch",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ForeverSc/web-demuxer"
+    "url": "git+https://github.com/bfbsoundetch/web-demuxer.git"
+  },
+  "homepage": "https://github.com/bfbsoundetch/web-demuxer#readme",
+  "bugs": {
+    "url": "https://github.com/bfbsoundetch/web-demuxer/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "webcodecs",

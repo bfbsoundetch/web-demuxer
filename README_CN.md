@@ -1,11 +1,11 @@
-<h4 align="right"><a href="https://github.com/ForeverSc/web-demuxer/blob/main/README.md">English</a> | <strong>简体中文</strong></h4>
+<h4 align="right"><a href="https://github.com/bfbsoundetch/web-demuxer/blob/main/README.md">English</a> | <strong>简体中文</strong></h4>
 <h1 align="center">Web-Demuxer</h1>
 <p align="center">使用 WebAssembly 在浏览器中对媒体文件进行解封装，专门为 WebCodecs 设计</p>
 
 <div align="center">
-  <a href="https://www.npmjs.com/package/web-demuxer"><img src="https://img.shields.io/npm/v/web-demuxer" alt="version"></a>
-  <a href="https://www.npmjs.com/package/web-demuxer"><img src="https://img.shields.io/npm/dm/web-demuxer" alt="downloads"></a>
-  <a href="https://www.jsdelivr.com/package/npm/web-demuxer"><img src="https://data.jsdelivr.com/v1/package/npm/web-demuxer/badge" alt="hits"></a>
+  <a href="https://www.npmjs.com/package/@bfbsoundetch/web-demuxer"><img src="https://img.shields.io/npm/v/@bfbsoundetch/web-demuxer" alt="version"></a>
+  <a href="https://www.npmjs.com/package/@bfbsoundetch/web-demuxer"><img src="https://img.shields.io/npm/dm/@bfbsoundetch/web-demuxer" alt="downloads"></a>
+  <a href="https://www.jsdelivr.com/package/npm/@bfbsoundetch/web-demuxer"><img src="https://data.jsdelivr.com/v1/package/npm/@bfbsoundetch/web-demuxer/badge" alt="hits"></a>
 </div>
 
 ## 项目概述
@@ -22,11 +22,11 @@ WebCodecs 提供了解码能力但缺乏解封装功能。虽然 mp4box.js 在�
 ## 快速开始
 
 ```bash
-npm install web-demuxer
+npm install @bfbsoundetch/web-demuxer
 ```
 
 ```typescript
-import { WebDemuxer } from "web-demuxer";
+import { WebDemuxer } from "@bfbsoundetch/web-demuxer";
 
 const demuxer = new WebDemuxer();
 
@@ -60,13 +60,13 @@ async function seek(file, time) {
 
 ### NPM 安装
 ```bash
-npm install web-demuxer
+npm install @bfbsoundetch/web-demuxer
 ```
 
 ### CDN 引入
 ```html
 <script type="module">
-  import { WebDemuxer } from 'https://cdn.jsdelivr.net/npm/web-demuxer/+esm';
+  import { WebDemuxer } from 'https://cdn.jsdelivr.net/npm/@bfbsoundetch/web-demuxer/+esm';
 </script>
 ```
 
@@ -77,7 +77,7 @@ npm install web-demuxer
 ```typescript
 const demuxer = new WebDemuxer({
   // 方式1：使用 CDN
-  wasmFilePath: "https://cdn.jsdelivr.net/npm/web-demuxer@latest/dist/wasm-files/web-demuxer.wasm",
+  wasmFilePath: "https://cdn.jsdelivr.net/npm/@bfbsoundetch/web-demuxer@latest/dist/wasm-files/web-demuxer.wasm",
   
   // 方式2：使用本地文件
   // 将npm包中dist/wasm-files/web-demuxer.wasm 复制到 public 目录
